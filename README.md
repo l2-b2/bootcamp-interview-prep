@@ -1,12 +1,17 @@
 # Bootcamp Interview Prep README
 
-- The questions here will be similar in difficulty to the ones you will be getting during your interview to be admitted into most top coding bootcamps.
+- The questions here will be similar to your interview questions to be enrolled into most top coding bootcamps.
 
-- They are designed for you to showcase your technical knowledge of basic programming syntax as well as problem solving skills.
+- These problems tests your technical knowledge of programming syntax as well as your problem solving skills.
 
-- It is highly recommended that you work through the problems first, before checking your answers with the provided solutions.
+- It is highly recommended that you work through the problems first on your own, before checking the provided solutions.
 
 - To test your solutions, simply navigate to the directory of your code, and type node followed by your file name.
+
+```
+cd lib
+node 01_twoSum.js
+```
 
 - To be able to enroll in a top coding school, you should be able to complete 3 problems from this problem set with-in 45 minutes.
 
