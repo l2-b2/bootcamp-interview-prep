@@ -13,7 +13,7 @@ cd lib
 node 01_twoSum.js
 ```
 
-- To be able to enroll in a top coding school, you should be able to complete 3 problems from this problem set with-in 45 minutes.
+- To be able to enroll in a top coding school, you should be able to complete 2-3 problems from this problem set in 45 minutes.
 
 - Hope this will help you with your enrollment into a great coding bootcamp.
 
