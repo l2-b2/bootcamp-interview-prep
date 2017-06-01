@@ -5,6 +5,10 @@
 */
 
 function largestSum(array) {
+    if (array.length < 2) {
+        throw ('Input array does not contian enough elements')
+    }
+
     var largestNumber;
     var secondLargestNumber;
 
@@ -17,7 +21,7 @@ function largestSum(array) {
         secondLargestNumber = array[0];
     }
 
-    // Iterate through our array while keeping track of the two largest numbers
+    // Iterate through our array just once while keeping track of the two largest numbers
     for (var i = 2; i < array.length; i += 1) {
         if (array[i] > largestNumber) {
             secondLargestNumber = largestNumber;
