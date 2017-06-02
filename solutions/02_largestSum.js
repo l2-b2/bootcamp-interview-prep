@@ -6,20 +6,12 @@
 
 function largestSum(array) {
     if (array.length < 2) {
-        throw ('Input array does not contian enough elements')
+        throw ('Input array does not contian enough elements');
     }
-
-    var largestNumber;
-    var secondLargestNumber;
 
     // Determine our default values by comparing the first and second number
-    if (array[0] > array[1]) {
-        largestNumber = array[0];
-        secondLargestNumber = array[1];
-    }else{
-        largestNumber = array[1];
-        secondLargestNumber = array[0];
-    }
+    var largestNumber = Math.max(array[0], array[1]);;
+    var secondLargestNumber = Math.min(array[0], array[1]);
 
     // Iterate through our array just once while keeping track of the two largest numbers
     for (var i = 2; i < array.length; i += 1) {
