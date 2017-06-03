@@ -18,7 +18,7 @@ function displayDoubleDigit(number){
 }
 
 function toMilitaryTime(standardTime) {
-    var hour = Number(standardTime.slice(0, 2));
+    var hour = Number(standardTime.slice(0, 2)) % 12;
     var minute = standardTime.slice(3, 5);
     var extension = standardTime.slice(6);
 
@@ -45,6 +45,8 @@ function toStandardTime(militaryTime) {
     if (hour > 12) {
         hour -= 12;
         extension = 'pm';
+    } else if (hour === 0) {
+        hour = 12;
     }
 
     var standardTime = displayDoubleDigit(hour) + ':' + minute + ' ' + extension;
