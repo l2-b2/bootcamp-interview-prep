@@ -7,7 +7,36 @@
 */
 
 function digitalRoot(number) {
+    var digitalSum = 0;
 
+    while (number > 0) {
+        // We extract the digits from the number 1 at a time and add it to digitalSum
+        digitalSum += number % 10;
+        number = Math.floor(number / 10);
+
+        // When we have extracted all the digits and our sum is not single digit, we reset number with our digitalSum, and reset digitalSum back to 0
+        if (number === 0 && digitalSum > 9) {
+            number = digitalSum;
+            digitalSum = 0;
+        }
+    }
+
+    return digitalSum;
+}
+
+/*
+    Math approach, because digital root of 10 = 1, and digital root of 10 to the nth power equals 1 to the nth power, which is still one
+    We can simply mod the number by base - 1, the base in our case is 10.  Take the number 111 for example:
+    100 % 9 === 1, 10 % 9 === 1, and 1 % 9 === 1
+    100 % 9 + 10 % 9 + 1 % 9 === (100 + 10 + 1) % 9 === 3 same as 100 * 2 + 10 * 2 + 1 * 2 === (100 + 10 + 1) * 2
+*/
+
+function digitalRoot2(number) {
+    if (number % 9 === 0) {
+        return 9;
+    } else {
+        return number % 9;
+    }
 }
 
 

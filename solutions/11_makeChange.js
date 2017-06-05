@@ -6,8 +6,48 @@
     Example: makeChange(25, [5, 10, 25]) should return [[5,5,5,5,5], [5,5,5,10], [5, 10, 10], [25]]
 */
 
-function makeChange (value, coins) {
+// A helper function to ensure we do not have contain duplicate results
+function resultsInclude(results, result) {
+    for (var i = 0; i < results.length; i += 1) {
+        var currentResult = results[i];
 
+        if (currentResult.length == result.length) {
+            var isMatch = true;
+
+            for (var j = 0; j < result.length; j += 1) {
+                if (result[j] !== currentResult[j]) isMatch = false;
+            }
+
+            if (isMatch) return true;
+        }
+    }
+
+    return false;
+}
+
+function makeChange (value, coins) {
+    var results = [];
+    var coinCombos = [[]];
+    var values = [value];
+    
+
+    while (values.length > 0) {
+        var currentCombo = coinCombos.pop();
+        var currentValue = values.pop();
+ 
+        for (var i = 0; i < coins.length; i += 1) {
+            var newCombo = (currentCombo.concat([coins[i]])).sort();
+            
+            if (currentValue > coins[i]) {
+                values.push(currentValue - coins[i]);
+                coinCombos.push(newCombo);
+            } else if (currentValue === coins[i]) {
+                if (resultsInclude(results, newCombo) === false) results.push(newCombo);
+            }
+        }
+    }
+
+    return results;
 }
 
 

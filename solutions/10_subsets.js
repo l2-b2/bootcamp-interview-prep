@@ -5,7 +5,30 @@
 */
 
 function subsets(array) {
+    var result = [[]];
 
+    for (var i = 0; i < array.length; i += 1) {
+        var resultLength = result.length;
+        var newElement = array[i];
+
+        for (var j = 0; j < resultLength; j += 1) {
+            var newSubset = result[j].concat([newElement]);
+            result.push(newSubset);
+        }
+    }
+
+    return result;
+}
+
+// Subsets problem is a great example where recursion simplifies the logic
+function subsets2(array) {
+    if (array.length === 0) return [[]];
+
+    var newElement = array[0];
+    var subSubsets = subsets(array.slice(1));
+    var newSubsets = subSubsets.map(subSubset => [newElement].concat(subSubset) );
+
+    return subSubsets.concat(newSubsets);
 }
 
 
