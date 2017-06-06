@@ -29,6 +29,7 @@ function digitalRoot(number) {
     We can simply mod the number by base - 1, the base in our case is 10.  Take the number 111 for example:
     100 % 9 === 1, 10 % 9 === 1, and 1 % 9 === 1
     100 % 9 + 10 % 9 + 1 % 9 === (100 + 10 + 1) % 9 === 3 same as 100 * 2 + 10 * 2 + 1 * 2 === (100 + 10 + 1) * 2
+    This is the most optimal answer, but it would be answer expected by a top tech company, not bootcamps.
 */
 
 function digitalRoot2(number) {
@@ -37,6 +38,32 @@ function digitalRoot2(number) {
     } else {
         return number % 9;
     }
+}
+
+/*
+    The string manipulation approach, it works but is not the recommended coding practice.
+    Converting data types when not needed just increase chance of creating bugs.
+*/
+
+function digitalRoot3(number) {
+    var numString = number.toString();
+    var root = 0;
+    var foundRoot = false;
+
+    while (!foundRoot) {
+        for (var i = 0; i < numString.length; i += 1) {
+            root += Number(numString[i]);
+        }
+
+        if (root < 10) {
+           foundRoot = true;
+        } else {
+            numString = root.toString();
+            root = 0;
+        }
+    }
+
+    return root;
 }
 
 
