@@ -19,4 +19,4 @@ node 01_twoSum.js
 
 - Your feedback and questions are welcomed.
 
-- You may save $250 when applying for App Academy through this [link](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.appacademy.io%2Freferral_redirect%3Fhash%3D59c6fbb2227611d7&h=ATPNxQr3CxfxOcDQjCr9RVLEXWAwLzq-W1-LCS48n-6oka7RCjU8BWgknetTqIJI-r0iDd724UXCpDcvfsMv8TWgd77cBYQaw-0CNxpZxwqtV_Y1ZiPopZFyWic_1DFdWjbtofDW9ZbXb18cQuX3VJJ3b0o).
+- You may save $250 when applying for App Academy through this [link](https://www.appacademy.io/referral_redirect?hash=59c6fbb2227611d7).
